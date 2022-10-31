@@ -1,13 +1,30 @@
 spring:
+  batch:
+    jdbc:
+      initialize-schema: always
+    job:
+      enabled: false
+  profiles:
+    active: local
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local
   datasource:
     driver-class-name: org.h2.Driver
     url: jdbc:h2:~/test
     username: sa
     password:
-  h2:
-    console:
-      enabled: true
-      path: /h2-console
-  batch:
-    jdbc:
-      initialize-schema: always
+
+---
+spring:
+  config:
+    activate:
+      on-profile: mysql
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/springbatch?useUnicode=true&characterEncoding=utf8
+    username: root
+    password: test1234
