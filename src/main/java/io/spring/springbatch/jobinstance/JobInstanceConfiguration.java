@@ -9,7 +9,6 @@ import org.springframework.batch.core.configuration.annotation.StepBuilderFactor
 import org.springframework.batch.repeat.RepeatStatus;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
 
 @RequiredArgsConstructor
 @Configuration
@@ -18,7 +17,7 @@ public class JobInstanceConfiguration {
     private final JobBuilderFactory jobBuilderFactory;
     private final StepBuilderFactory stepBuilderFactory;
 
-    @Primary
+//    @Primary
     @Bean
     public Job instanceBatchJob() {
         return this.jobBuilderFactory.get("Job")
