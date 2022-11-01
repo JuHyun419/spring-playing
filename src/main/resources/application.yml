@@ -4,6 +4,8 @@ spring:
       initialize-schema: always
     job:
       enabled: false
+      #enabled: true
+      #names: JobExecution
   profiles:
     active: local
 
