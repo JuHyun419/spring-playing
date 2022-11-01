@@ -5,3 +5,5 @@
 ## 블로그 링크
 - [Spring Batch (1) 개요](https://zzang9ha.tistory.com/423)
 - [Spring Batch (2) 프로젝트 구성 및 의존성 설정, Hello World](https://zzang9ha.tistory.com/424)
+- [Spring Batch (3) DB 스키마](https://zzang9ha.tistory.com/426)
+- [Spring Batch (4) Job - JobInstance, JobParameters, JobExecution](https://zzang9ha.tistory.com/427)
