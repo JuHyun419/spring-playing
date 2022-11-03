@@ -28,6 +28,6 @@ public class JobParameterTest implements ApplicationRunner {
                 .addDate("date", new Date())
                 .toJobParameters();
 
-        jobLauncher.run(job, jobParameters);
+//        jobLauncher.run(job, jobParameters);
     }
 }
