@@ -21,14 +21,14 @@ public class JobParameterConfiguration {
     @Bean
     public Job BatchJob() {
         return this.jobBuilderFactory.get("JobParameters")
-                .start(step1(null))
-                .next(step2())
+                .start(parametersStep1(null))
+                .next(parametersStep2())
                 .build();
     }
 
     @Bean
     @JobScope
-    public Step step1(@Value("#{jobParameters[requestDate]}") String requestDate) {
+    public Step parametersStep1(@Value("#{jobParameters[requestDate]}") String requestDate) {
         return stepBuilderFactory.get("JobParametersStep1")
                 .tasklet((contribution, chunkContext) -> {
                     System.out.println("=======================");
@@ -40,7 +40,7 @@ public class JobParameterConfiguration {
     }
 
     @Bean
-    public Step step2() {
+    public Step parametersStep2() {
         return stepBuilderFactory.get("JobParametersStep2")
                 .tasklet((contribution, chunkContext) -> {
                     System.out.println("step1 has executed");
