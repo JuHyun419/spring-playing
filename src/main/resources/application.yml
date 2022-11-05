@@ -3,9 +3,9 @@ spring:
     jdbc:
       initialize-schema: always
     job:
-      enabled: false
-      #enabled: true
-      #names: JobExecution
+#      enabled: false
+      enabled: true
+      names: executionContextJob
   profiles:
     active: local
 
