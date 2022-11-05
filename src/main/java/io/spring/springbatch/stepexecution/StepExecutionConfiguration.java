@@ -13,7 +13,6 @@ import org.springframework.batch.repeat.RepeatStatus;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
 
 @RequiredArgsConstructor
 @Configuration
@@ -22,7 +21,7 @@ public class StepExecutionConfiguration {
     private final JobBuilderFactory jobBuilderFactory;
     private final StepBuilderFactory stepBuilderFactory;
 
-    @Primary
+//    @Primary
     @Bean
     public Job stepExecutionJob() {
         return this.jobBuilderFactory.get("StepExecutionJob")
