@@ -8,3 +8,5 @@
 - [Spring Batch (3) DB 스키마](https://zzang9ha.tistory.com/426)
 - [Spring Batch (4) Job - JobInstance, JobParameters, JobExecution](https://zzang9ha.tistory.com/427)
 - [Spring Batch (5) Step, StepExecution](https://zzang9ha.tistory.com/428)
+- [Spring Batch (6) ExecutionContext](https://zzang9ha.tistory.com/429)
+- [Spring Batch (7) JobRepository](https://zzang9ha.tistory.com/430)
