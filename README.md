@@ -10,3 +10,4 @@
 - [Spring Batch (5) Step, StepExecution](https://zzang9ha.tistory.com/428)
 - [Spring Batch (6) ExecutionContext](https://zzang9ha.tistory.com/429)
 - [Spring Batch (7) JobRepository](https://zzang9ha.tistory.com/430)
+- [Spring Batch (8) JobLauncher](https://zzang9ha.tistory.com/431)
