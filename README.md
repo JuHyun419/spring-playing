@@ -11,3 +11,4 @@
 - [Spring Batch (6) ExecutionContext](https://zzang9ha.tistory.com/429)
 - [Spring Batch (7) JobRepository](https://zzang9ha.tistory.com/430)
 - [Spring Batch (8) JobLauncher](https://zzang9ha.tistory.com/431)
+- [Spring Batch (9) JobParametersValidator](https://zzang9ha.tistory.com/432)
