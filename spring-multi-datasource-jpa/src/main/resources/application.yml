@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    hikari:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      jdbc-url: jdbc:mysql://localhost:3307/test-db?useUnicode=true&characterEncoding=utf8
+      username: root
+      password: 1234
+      maximum-pool-size: 10
+  datasource-second:
+    hikari:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      jdbc-url: jdbc:mysql://localhost:3308/test-second-db?useUnicode=true&characterEncoding=utf8
+      username: root
+      password: 1234
+      maximum-pool-size: 10
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    database: mysql
