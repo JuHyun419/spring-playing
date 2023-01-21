@@ -1,0 +1,6 @@
+GET http://localhost:8080/api/users
+Content-Type: application/json
+
+###
+GET http://localhost:8080/api/products
+Content-Type: application/json
