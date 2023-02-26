@@ -1,0 +1,8 @@
+###
+POST http://localhost:8080/posts
+Content-Type: application/json
+
+
+###
+POST http://localhost:8080/posts/40/like
+Content-Type: application/json
