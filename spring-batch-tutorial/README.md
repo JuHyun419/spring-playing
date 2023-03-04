@@ -14,3 +14,4 @@
 - [Spring Batch (9) JobParametersValidator](https://zzang9ha.tistory.com/432)
 - [Spring Batch (10) @JobScope, @StepScope](https://zzang9ha.tistory.com/434)
 - [Spring Batch (11) Repeat](https://zzang9ha.tistory.com/438)
+- [Spring Batch (12) Retry](https://zzang9ha.tistory.com/444)
