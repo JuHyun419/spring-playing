@@ -23,7 +23,7 @@ public class TaskletBatchRetryJob {
 
     private final StepBuilderFactory stepBuilderFactory;
 
-    private final RetryTemplate retryTemplate;
+    private final RetryTemplate retryTemplate; // RetryTemplate 주입
 
     @Primary
     @Bean
@@ -45,11 +45,11 @@ public class TaskletBatchRetryJob {
     public Tasklet retryTasklet() {
         return ((contribution, chunkContext) -> {
             retryTemplate.execute(
-                    context -> { // RetryCallback
+                    context -> { // RetryCallback: 재시도 로직(3회)
                         log.info("TaskletBatchRetryJob run ...");
                         throw new RuntimeException();
                     },
-                    context -> { // RecoveryCallback
+                    context -> { // RecoveryCallback: 재시도 최대 횟수(3) 시도 후 실패할 경우 Recover
                         log.info("Failed retry 3 count ...");
                         return null;
                     });
