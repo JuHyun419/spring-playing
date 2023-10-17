@@ -1,4 +1,4 @@
-package com.heyd.spring;
+package com.heyd.servlet;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
