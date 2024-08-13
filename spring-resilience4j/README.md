@@ -64,28 +64,28 @@
 
 ### Test
 
-최초 상태
+최초 상태 <br>
 ![img_1.png](img_1.png)
 
-첫 번째 호출 - 성공
+첫 번째 호출 - 성공 <br>
 ![img_2.png](img_2.png)
 
-두 번째 호출 - 실패
+두 번째 호출 - 실패 <br>
 ![img_3.png](img_3.png)
 
-세 번째 호출 - 성공
+세 번째 호출 - 성공 <br>
 ![img_4.png](img_4.png)
 
-네 번째 호출 - 성공 (실패율 25%)
+네 번째 호출 - 성공 (실패율 25%) <br>
 ![img_5.png](img_5.png)
 
-다섯 번째 호출 - 실패 (실패율 40%)
+다섯 번째 호출 - 실패 (실패율 40%) <br>
 ![img_6.png](img_6.png)
 
-여섯 번째 호출 - 실패 (실패율 50%), Circuit State (OPEN)
+여섯 번째 호출 - 실패 (실패율 50%), Circuit State (OPEN) <br>
 ![img_7.png](img_7.png)
 
-여섯 번째 호출 후 duration 시간 지난 후 Circuit State (OPEN -> HALF_OPEN)
+여섯 번째 호출 후 duration 시간 지난 후 Circuit State (OPEN -> HALF_OPEN) <br>
 ![img_8.png](img_8.png)
 
 - bufferedCalls 는 최초 설정한 slidingWindowSize 를 초과하지 않음
