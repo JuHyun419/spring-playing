@@ -63,36 +63,29 @@
 - 원형 배열의 사이즈(slidingWindowSize)가 5이기 때문에 6번째 호출 시 최초 호출인 1은 evicted 되고, 나머지 호출순서 2~6을 기준으로 계산
 
 ### Test
-1. 최초 상태
 
+최초 상태
 ![img_1.png](img_1.png)
 
-2. 첫 호출 - 성공
-
+첫 번째 호출 - 성공
 ![img_2.png](img_2.png)
 
-3. 두 번째 호출 - 실패
-
+두 번째 호출 - 실패
 ![img_3.png](img_3.png)
 
-4. 세 번째 호출 - 성공
-
+세 번째 호출 - 성공
 ![img_4.png](img_4.png)
 
-5. 네 번째 호출 - 성공 (실패율 25%)
-
+네 번째 호출 - 성공 (실패율 25%)
 ![img_5.png](img_5.png)
 
-6. 다섯 번째 호출 - 실패 (실패율 40%)
-
+다섯 번째 호출 - 실패 (실패율 40%)
 ![img_6.png](img_6.png)
 
-7. 여섯 번째 호출 - 실패 (실패율 50%), Circuit OPEN
-
+여섯 번째 호출 - 실패 (실패율 50%), Circuit State (OPEN)
 ![img_7.png](img_7.png)
 
-8. 여섯 번째 호출 후 duration 설정 후 OPEN -> HALF_OPEN 
-
+여섯 번째 호출 후 duration 시간 지난 후 Circuit State (OPEN -> HALF_OPEN)
 ![img_8.png](img_8.png)
 
 - bufferedCalls 는 최초 설정한 slidingWindowSize 를 초과하지 않음
