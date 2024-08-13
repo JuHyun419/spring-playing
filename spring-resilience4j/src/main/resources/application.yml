@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: spring-resilience4j
+resilience4j:
+  circuitbreaker:
+    configs:
+      default:
+        register-health-indicator: true
+        sliding-window-size: 10
+        failure-rate-threshold: 50
+        #        automatic-transition-from-open-to-half-open-enabled: true # wait-duration-in-open-state 설정 시간 지난 후 Circuit 의 상태가 OPEN -> HALF_OPEN 으로 변경
+        wait-duration-in-open-state: 5s
+        slow-call-duration-threshold: 3s
+    instances:
+      jh:
+        base-config: default
+        minimum-number-of-calls: 3
+
+management:
+  health:
+    circuitbreakers:
+      enabled: true
+  endpoint:
+    health:
+      show-details: always
+
+
