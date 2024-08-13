@@ -2,7 +2,6 @@
 GET http://localhost:8080/api/1
 Accept: application/json
 
-
 ### GET request with a header
 GET http://localhost:8080/api/2
 Accept: application/json
