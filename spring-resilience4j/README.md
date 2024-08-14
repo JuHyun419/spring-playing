@@ -20,7 +20,7 @@
 
 ### State Transition -  Failure rate and slow call rate thresholds
 
-![img.png](img.png)
+![img.png](images/img.png)
 
 | 상태        | 설명                                                                                                                 |
 |-----------|--------------------------------------------------------------------------------------------------------------------|
@@ -65,28 +65,28 @@
 ### Test
 
 최초 상태 <br>
-![img_1.png](img_1.png)
+![img_1.png](images/img_1.png)
 
 첫 번째 호출 - 성공 <br>
-![img_2.png](img_2.png)
+![img_2.png](images/img_2.png)
 
 두 번째 호출 - 실패 <br>
-![img_3.png](img_3.png)
+![img_3.png](images/img_3.png)
 
 세 번째 호출 - 성공 <br>
-![img_4.png](img_4.png)
+![img_4.png](images/img_4.png)
 
 네 번째 호출 - 성공 (실패율 25%) <br>
-![img_5.png](img_5.png)
+![img_5.png](images/img_5.png)
 
 다섯 번째 호출 - 실패 (실패율 40%) <br>
-![img_6.png](img_6.png)
+![img_6.png](images/img_6.png)
 
 여섯 번째 호출 - 실패 (실패율 50%), Circuit State (OPEN) <br>
-![img_7.png](img_7.png)
+![img_7.png](images/img_7.png)
 
 여섯 번째 호출 후 duration 시간 지난 후 Circuit State (OPEN -> HALF_OPEN) <br>
-![img_8.png](img_8.png)
+![img_8.png](images/img_8.png)
 
 - bufferedCalls 는 최초 설정한 slidingWindowSize 를 초과하지 않음
 - waitDurationInOpenState 설정 값동안 서킷브레이커가 OPEN 이 되어 호출이 차단되고, duration 지난 후 호출하면 HALF_OPEN 상태로 변경되고, 이후 호출 결과에 따라 OPEN, CLOSED 상태로 변경
