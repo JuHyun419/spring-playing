@@ -90,7 +90,43 @@
 
 - bufferedCalls 는 최초 설정한 slidingWindowSize 를 초과하지 않음
 - waitDurationInOpenState 설정 값동안 서킷브레이커가 OPEN 이 되어 호출이 차단되고, duration 지난 후 호출하면 HALF_OPEN 상태로 변경되고, 이후 호출 결과에 따라 OPEN, CLOSED 상태로 변경
-  - duration 지난 후 자동으로 서킷 상태가 OPEN -> HALF_OPEN 으로 변경하려면 `automatic-transition-from-open-to-half-open-enabled: true` 설정 
+  - duration 지난 후 자동으로 서킷 상태가 OPEN -> HALF_OPEN 으로 변경하려면 `automatic-transition-from-open-to-half-open-enabled: true` 설정
 
-## References
+### References
 - https://resilience4j.readme.io/docs/circuitbreaker
+
+<br><br>
+
+## RateLimiter (처리율 제한)
+- RateLimiter (처리율 제한)은 단위 시간동안 얼마만큼의 실행(요청)을 허용할 것인지 제한하는 기능
+- 처리율 제한 구현 라이브러리는 Bucket4j, Guava, RateLimitJ(Deprecated), Resilience4j 등이 존재하며, 처리율 제한을 목적으로 한 Bucket4j, Guava 등의 오픈 소스가 더 적합할 수 있으나, 
+해당 프로젝트는 Resilience4j 라이브러리를 기준으로 작성하기 때문에, Resilience4j 가 제공하는 RateLimiter 를 사용한다.
+
+![img_9.png](images/img_9.png)
+- JVM 시작과 함께 System.nanoTime() 을 일정 단위 시간(limitRefreshPeriod)로 쪼개고, 단위 시간 동안 허가되는 요청수(limitForPeriod)를 설정한다.
+
+### Configuration
+- `timeoutDuration`: 호출 스레드가 접근 허가를 위해 대기하는 시간 (기본값: 5s)
+- `limitRefreshPeriod`: cycle 이 초기화 되는 주기, cycle 주기가 끝나면 호출 가능 횟수는 limitForPeriod 값 만큼 초기화 (기본값: 500ns)
+- `limitForPeriod`: 하나의 cycle 주기 동안 호출할 수 있는 횟수 (기본값: 50회)
+
+```yaml
+resilience4j:
+  ratelimiter:
+    configs:
+      default:
+        # 10초동안 최대 5회의 호출이 가능한 RateLimiter
+        timeout-duration: 1s # 접근 허가를 위해 대기하는 시간
+        limit-refresh-period: 10s # cycle 이 초기화 되는 주기
+        limit-for-period: 5 # cycle 동안 호출 가능한 횟수
+```
+![img_10.png](images/img_10.png)
+- 10초안에 RateLimiter 설정한 API 를 5회 이상 호출하면 5회까지는 정상 성공, 5회 초과는 fallback 메서드 호출
+
+![img_11.png](images/img_11.png)
+- fallback 메서드를 설정하지 않았을경우, RequestNotPermitted 예외 발생 -> 429(Too Many Request) 응답 코드로 내려줄 수 있음
+
+### References
+- https://resilience4j.readme.io/docs/ratelimiter
+- https://leedongyeop.notion.site/4-8d4fcdfc382e41b4bcb1b17731463140
+- https://developer.mozilla.org/ko/docs/Web/HTTP/Status/429
