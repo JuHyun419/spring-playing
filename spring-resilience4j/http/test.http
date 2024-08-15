@@ -1,11 +1,15 @@
 ### GET request with a header
-GET http://localhost:8080/api/1
+GET http://localhost:8080/api/circuit-breaker/1
 Accept: application/json
 
 ### GET request with a header
-GET http://localhost:8080/api/2
+GET http://localhost:8080/api/circuit-breaker/2
 Accept: application/json
 
 ### GET request with a header
-GET http://localhost:8080/api/3
+GET http://localhost:8080/api/circuit-breaker/3
+Accept: application/json
+
+### GET request with a header
+GET http://localhost:8080/api/rate-limiter
 Accept: application/json
