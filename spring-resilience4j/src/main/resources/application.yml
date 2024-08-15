@@ -15,6 +15,13 @@ resilience4j:
       jh:
         base-config: default
         minimum-number-of-calls: 3
+  ratelimiter:
+    configs:
+      default:
+        # 10초동안 최대 5회의 호출이 가능한 RateLimiter
+        timeout-duration: 1s # 접근 허가를 위해 대기하는 시간
+        limit-refresh-period: 10s # cycle 이 초기화 되는 주기
+        limit-for-period: 5 # cycle 동안 호출 가능한 횟수
 
 management:
   health:
