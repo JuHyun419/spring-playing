@@ -102,8 +102,19 @@
 - 처리율 제한 구현 라이브러리는 Bucket4j, Guava, RateLimitJ(Deprecated), Resilience4j 등이 존재하며, 처리율 제한을 목적으로 한 Bucket4j, Guava 등의 오픈 소스가 더 적합할 수 있으나, 
 해당 프로젝트는 Resilience4j 라이브러리를 기준으로 작성하기 때문에, Resilience4j 가 제공하는 RateLimiter 를 사용한다.
 
+### RateLimiter 사례
+- 사용자는 초당 2회 이상 새 글을 올릴 수 없다.
+- 특정 API 호출은 3초동안 최대 10회까지 허용한다.
+- 같은 IP 주소로는 하루에 10개 이상의 계정을 생성할 수 없다.
+
 ![img_9.png](images/img_9.png)
 - JVM 시작과 함께 System.nanoTime() 을 일정 단위 시간(limitRefreshPeriod)로 쪼개고, 단위 시간 동안 허가되는 요청수(limitForPeriod)를 설정한다.
+
+### RateLimiter 이점
+- Dos(Denial of Service) 공격에 의한 자원 고갈을 방지할 수 있다.
+  - 트위터는 3시간 동안 300개의 트윗만 올릴 수 있도록 제한
+  - 구글 독스 API는 사용자당 분당 300회의 read 요청만 허용
+- 비용 절감, 서버 과부하 방지 등
 
 ### Configuration
 - `timeoutDuration`: 호출 스레드가 접근 허가를 위해 대기하는 시간 (기본값: 5s)
