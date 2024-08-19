@@ -7,3 +7,4 @@
 - [Spring Redis](https://github.com/JuHyun419/spring-playing/tree/main/spring-redis)
 - [좋아요 기능을 통해 살펴보는 동시성 이슈](https://github.com/JuHyun419/spring-playing/tree/main/spring-mysql-lock-jpa)
 - [Fault Tolerance - Resilience4j (CircuitBreaker)](https://github.com/JuHyun419/spring-playing/tree/main/spring-resilience4j#circuit-breaker)
+- [Fault Tolerance - Resilience4j (RateLimiter)](https://github.com/JuHyun419/spring-playing/tree/main/spring-resilience4j#ratelimiter-%EC%B2%98%EB%A6%AC%EC%9C%A8-%EC%A0%9C%ED%95%9C)
