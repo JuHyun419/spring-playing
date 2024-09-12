@@ -6,6 +6,7 @@
 
 ### Sliding Window
 - CircuitBreaker는 호출 결과를 저장하고 집계하기 위해 슬라이딩 윈도우 방식을 사용함
+  - 슬라이딩 윈도우 (Sliding Window): 일정 시간 범위 내의 요청 성공률/실패율을 지속적으로 모니터링
 - Count-based sliding window, Time-based sliding window 를 선택할 수 있다. (디폴트는 Count-based)
   - Count-based: 마지막 N 개의 호출 결과 집계
   - Time-based: 마지막 N 초의 호출 결과 집계
